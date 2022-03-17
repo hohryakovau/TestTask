@@ -69,7 +69,6 @@ func main() {
 
 	go func() {
 		for count := range c {
-			//fmt.Println("count c", count)
 			total = total + count
 		}
 	}()
@@ -87,9 +86,7 @@ func main() {
 			fmt.Println("Total:", total)
 			return
 		}
-
 	}
-
 }
 
 func CountGo(c chan int, countGo chan int, url string, wg *sync.WaitGroup) {
@@ -115,5 +112,4 @@ func CountGo(c chan int, countGo chan int, url string, wg *sync.WaitGroup) {
 
 	c <- count
 	<-countGo
-
 }
