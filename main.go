@@ -66,7 +66,7 @@ func main() {
 
 	countGo := make(chan int, k) // указываем длинну канала (ссылка 1)
 
-	c := make(chan int) //для счетчика всех вхождений
+	c := make(chan int, k) //для счетчика всех вхождений
 
 	for i, url := range urls {
 		countGo <- i // ссылка 1 -  так как у нас фиксированная длинна канала,
